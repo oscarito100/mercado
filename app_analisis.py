@@ -126,5 +126,15 @@ if area_seleccionada:
         'website': 'Sitio Web',
         'telefono': 'Teléfono'
     })
-    
-    st.dataframe(df_mostrar, use_container_width=True, hide_index=True)
+    st.dataframe(
+        df_mostrar, 
+        use_container_width=True, 
+        hide_index=True,
+        column_config={
+            "Sitio Web": st.column_config.LinkColumn(
+                "Sitio Web",
+                help="Abre el enlace de la universidad en una pestaña nueva",
+                display_text="Ver sitio web" # Para que se vea más limpio
+            )
+        }
+    )
